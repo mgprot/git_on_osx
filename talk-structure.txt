@@ -79,15 +79,28 @@ Typical usage
         git add .
         git commit -m 'initial commit'
 
-        ssh server
-        cd git-archive
-        mkdir project_dir.git
-        cd project_dir.git
-        git init --bare
-        exit
+        ssh server:
+        -----------
+            ssh server
+            cd git-archive
+            mkdir project_dir.git
+            cd project_dir.git
+            git init --bare
+            exit
 
-        git remote add servername ssh://server/~/Git/project_dir.git
-        git push servername master
+            git remote add servername ssh://server/~/Git/project_dir.git
+            git push servername master
+
+        usb stick:
+        ----------
+            cd /Volumes/usb_stick/git
+            mkdir project_dir.git
+            cd project_dir.git
+            git init --base
+
+            cd -                    # back to original project directory
+            git remote add usb_stick /Volumes/usb_stick/git/project_dir.git
+            git push usb_stick --all
 
         git remote -v
 
