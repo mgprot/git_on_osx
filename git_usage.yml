@@ -1,0 +1,362 @@
+---
+add:
+  - ' -u'
+  - ' .'
+  - ' -u'
+  - ' .'
+  - ' --help'
+  - ' -u'
+  - ' .'
+  - ' --help'
+  - ' -u'
+  - ' -u'
+  - ' .'
+  - ' -u'
+  - ' .'
+  - ' -u'
+  - ' .'
+  - ' -u'
+  - ' .'
+  - ' -u'
+  - ' -u'
+  - ' bin/git-new'
+  - ' .'
+  - ' -u'
+  - " -u ; git commit -m 'clean up output - timestamp before solution'"
+  - ' ReadMe.txt'
+  - ' online_runaway.pl'
+  - ' -u'
+apply:
+  - ' --help'
+bisect:
+  - ' --help'
+  - ' start HEAD'
+  - ' run grep cobber'
+  - ' start HEAD 6582801'
+  - ' run grep -R cobber .'
+branch:
+  - ' --help'
+  - ' -f OSX-10.6.1'
+  - ' -D master'
+  - ''
+  - ' -a'
+  - ' --help'
+  - ' -f OSX-10.6.1'
+  - ' -D master'
+  - ''
+  - ' -a'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ' -a'
+  - ''
+  - ' clean'
+  - ' -D origin/bad_master'
+  - ' -r -D origin/bad_master'
+  - ' -r -D origin/clean'
+  - ' -r -D origin/master'
+  - ' -r -D origin/cocoa'
+  - ' -r -D origin/grid_optimisation'
+  - ' -a'
+  - ' -D bad_master'
+  - ' -d clean'
+  - ' -D grid_optimisation'
+  - ' -D cocoa'
+checkout:
+  - ' -b atoms steve/atoms'
+  - ' -b atoms steve/atoms'
+  - ' -b atoms steve/atoms'
+  - ' --help'
+  - ' -f -t chief/OSX-10.5.8'
+  - ' master'
+  - ' OSX-10.5.8'
+  - ' --help'
+  - ' -f -t chief/OSX-10.5.8'
+  - ' master'
+  - ' OSX-10.5.8'
+  - ' OSX-10.6.1'
+  - ' -b rework'
+  - ' OSX-10.6.1'
+  - ' -b rework'
+  - ' OSX-10.6.1'
+  - ' -b rework'
+  - ' -t chief/generic'
+  - ' -b ralph_demo'
+  - ' -b unknown_state'
+  - ' ralph_demo'
+  - ' d1f4337'
+  - ' 7168e70'
+  - ' 6582801'
+  - ' 241e85d'
+  - ' 7eafae3'
+  - ' a260199'
+  - ' 04ce955'
+  - ' 04ce955 ; grep -R cobber .'
+  - ' 81d7bb1 ; grep -R cobber .'
+  - ' 6c716be'
+  - ' -b clean'
+  - ' clean'
+  - ' -b bad_master original_master'
+  - ' -t github/master -b github'
+  - ' master'
+  - ' hacker.org.runaway.log'
+  - ' github'
+cherry:
+  - ' --help'
+  - ' clean master 14'
+  - ' clean master 8ad3496'
+  - ' clean master d1f4337'
+cherry-pick:
+  - ' -n d1f4337'
+  - ' --help'
+clean:
+  - ' -dxf'
+clone:
+  - ' -o chief ssh://chief.opensauce.de/~/Git/Mac/diary.git'
+  - ' -o chief ssh://chief.opensauce.de/~/Git/Mac/diary.git'
+  - ' -o chief ssh://chief/~/Git/Unix/Scripts.git'
+  - ' --help'
+  - ' ~/Development/Challenges/hacker.org/runaway_robot'
+  - ' ../runaway.git/'
+commit:
+  - " -m 'replace NSLog with DLog'"
+  - " -m 'cannot find out why displayInContext of layers is not being called'"
+  - ' --amend'
+  - " -m 'use 10.5 as base SDK'"
+  - " -m 'replace NSLog with DLog'"
+  - " -m 'cannot find out why displayInContext of layers is not being called'"
+  - ' --amend'
+  - " -m 'use 10.5 as base SDK'"
+  - " -m 'replace NSLog with DLog'"
+  - " -m 'cannot find out why displayInContext of layers is not being called'"
+  - ' --amend'
+  - " -m 'use 10.5 as base SDK'"
+  - " -m 'allow import of multiple text files, clean up DB interaction'"
+  - " -m 'allow import of multiple text files, clean up DB interaction'"
+  - " -m 'drastically reduced - focusing on animation without paths'"
+  - " -am 'use animator proxy to move a view around'"
+  - " -m 'add key-frame animation - see animations dictionary'"
+  - " -m 'notes to self'"
+  - " -am 'more notes to self: grouped keyframe animations do not need same number of keyframes'"
+  - " -m 'drastically reduced - focusing on animation without paths'"
+  - " -am 'use animator proxy to move a view around'"
+  - " -m 'add key-frame animation - see animations dictionary'"
+  - " -m 'notes to self'"
+  - " -am 'more notes to self: grouped keyframe animations do not need same number of keyframes'"
+  - " -m 'drastically reduced - focusing on animation without paths'"
+  - " -am 'use animator proxy to move a view around'"
+  - " -m 'add key-frame animation - see animations dictionary'"
+  - " -m 'notes to self'"
+  - " -am 'more notes to self: grouped keyframe animations do not need same number of keyframes'"
+  - " -m 'first version, seems to be fully functional'"
+  - " -m 'clean up meandering if $verbose code'"
+  - " -m 'move from /usr/local/bin/perl to standard /usr/bin/perl'"
+  - " -m 'attempt to scale, rotate and fade at the same time - fails'"
+  - " -m 'empty project'"
+  - " -m 'first working version - a bit clunky but definitely rotated'"
+  - " -m 'make the time tick'"
+  - " -m 'add git-new script for creating a remote repo to mirror new local repo'"
+  - " -m 'unknown new files'"
+  - " -m 'update for ralph'"
+  - " -m 'initial commit'"
+  - " -m 'add ReadMe.txt'"
+  - ' --amend ReadMe.txt'
+  - " -m 'ready for online challenge'"
+  - " -m 'clean up command line interaction and update readme to reflect changes'"
+config:
+  - ' --help'
+  - " add user.name='Stephen Riehm'"
+  - " user.name='Stephen Riehm'"
+  - " user.name 'Stephen Riehm'"
+  - ' user.email mgprot@opensauce.de'
+  - ''
+  - ' github.user mgprot'
+  - ' -l'
+  - ' -l'
+describe:
+  - ''
+diff:
+  - ''
+  - ''
+  - ' HEAD OSX-10.5.8~11'
+  - ' HEAD'
+  - ''
+  - ' HEAD OSX-10.5.8~11'
+  - ' HEAD'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ' -w'
+  - ''
+  - ' -w'
+fetch:
+  - ' chief'
+  - ' chief'
+  - ' chief'
+gc:
+  - ''
+grep:
+  - ' hacker.org'
+  - ' --help'
+  - ' password'
+init:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ' ; git add .'
+  - " ; git add . ; git commit -m 'initial commit'"
+  - ' --bare'
+log:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ' | grep password'
+  - ' | grep online'
+  - ' master'
+  - ' master .. clean'
+  - ' master clean'
+  - ' master..clean'
+  - ' master-clean'
+  - ' clean master'
+  - ' clean..master'
+  - ''
+merge:
+  - ' chief'
+  - ' chief/master'
+  - ' chief'
+  - ' chief/master'
+  - ' chief'
+  - ' chief/master'
+  - ' master'
+  - ' --help'
+prune:
+  - ' --help'
+  - ' -n'
+  - ' -n --expire 2009-11-07'
+  - ' -n -v --expire 2009-11-07'
+  - ' -v --expire 2009-11-07'
+pull:
+  - ' github'
+push:
+  - ' chief --all'
+  - ' chief'
+  - ' chief --all'
+  - ' chief'
+  - ' chief --all'
+  - ' chief'
+  - ' -f chief :'
+  - ' chief :watch_apple_example_code'
+  - ' chief :'
+  - ' -f chief :'
+  - ' chief :watch_apple_example_code'
+  - ' chief :'
+  - ' chief'
+  - ' github master'
+  - ' github :'
+  - ' chief master'
+  - ' chief ":'
+  - ' chief :'
+  - ' :'
+  - ' chief :'
+  - ' chief master'
+  - ' chief --tags'
+  - ' chief :'
+  - ' ~/tmp/github/runaway.git'
+  - ' local_github master'
+  - ' github master'
+  - ' chief -f :'
+  - ' chief :chief/forward_lookup'
+  - ' --help'
+  - ' chief :forward_lookup'
+  - ' chief :grid_optimisation'
+  - ' chief :cocoa'
+  - ' chief github'
+  - ' github'
+  - ' chief'
+rebase:
+  - ' -i'
+  - ' --help'
+  - ' -i --onto github clean'
+  - ' --onto clean 8ad3496 master'
+  - ' --continue'
+remote:
+  - ' update chief'
+  - ' add chief ssh://chief.opensauce.de/~/Public/Git/AnimatedButton.git'
+  - ' update chief'
+  - ' add chief ssh://chief.opensauce.de/~/Public/Git/AnimatedButton.git'
+  - ' update chief'
+  - ' add chief ssh://chief.opensauce.de/~/Public/Git/AnimatedButton.git'
+  - ' update'
+  - ' update'
+  - ' add github ssh://github.com/mgprot/path_helper.pl.git'
+  - ' add chief ssh://chief/~/Git/Perl/path_helper.pl.git'
+  - ' -v'
+  - ' add github git@github.com:mgprot/path_helper.git'
+  - ' add chief ssh://chief/~/Git/Max/Experiments/RotatedText.git'
+  - ' rm chief'
+  - ' add chief ssh://chief/~/Git/Mac/Experiments/RotatedText.git'
+  - ' -v'
+  - ' add chief ssh://chief/~/Git/Presentations/ksh-pc-plus.git'
+  - ' add chief ssh://chief/~/Git/Presentations/editing-perl-ws.git'
+  - ' add chief ssh://chief/~/Git/Presentations/perl-pc-plus.git'
+  - ' add local_github ~/tmp/github/runaway.git/'
+  - ' add github git@github.com:cobber/runaway_robot.git'
+  - ' -v'
+reset:
+  - ' clean --hard'
+show:
+  - ' 8ad3496'
+  - ' d1f4337'
+  - ''
+  - ' --help'
+show-branch:
+  - ' -a'
+  - ' -a'
+  - ' -a'
+  - ''
+  - ' -a'
+  - ''
+  - ' -a'
+  - ''
+  - ' -a'
+  - ''
+  - ' -a'
+  - ''
+  - ' -a'
+  - ' -a'
+  - ' -a'
+  - ''
+  - ''
+  - ' -a'
+status:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+stau:
+  - ''
+  - ''
+tag:
+  - " -a broken_fade_and_rotate -m 'broken version: rotate and fade does strange things'"
+  - ' -ln'
+  - " -s perl-ws-2000 -m 'Presented at the second German Perl Workshop, 8.3 - 10.3.2000 in Sankt Augustin, Germany'"
+  - " -s pc-plus -m 'Presented at pc-plus with Janis Papanagnou'"
+  - ' original_master'
+  - ''
+  - ' -a'
+  - ' -l'
+  - ' -ln'
+  - ' -d perl-1.0'
+  - ' -d original_master'
