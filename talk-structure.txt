@@ -1,0 +1,226 @@
+Git with XCode on OS-X
+======================
+
+(C) Stephen Riehm
+2009-11-08
+
+Introduction:
+=============
+
+    very quick overview of what git is
+        version control
+        snap-shot concept
+            - always consistent
+            - reproducable
+            - no individual file-versions
+            - no sub-trees
+        commit chains
+        git objects:
+            - blobs
+            - trees
+            - commits
+            - tags
+            - branches
+
+Get your hands dirty:
+=====================
+
+    requires command line!
+        gitx is a nice for:
+            - browsing changes
+            - committing
+            but fails for just about everything else
+
+Configuration:
+==============
+
+    generic:
+        - ~/.gitconfig
+            - core.pager
+            - core.excludesfile
+            - user.name
+            - user.email
+            - format.pretty
+
+        -----
+            [core]
+                    pager = more
+                    excludesfile = /Users/steve/Library/Preferences/login.configurations/config/git/gitignore
+            [user]
+                    name = Stephen Riehm
+                    email = steve@opensauce.de
+            [format]
+                    pretty = format:%h %ci [%aN] %s
+        -----
+
+    mac specific:
+        - ~/.gitignore  (from excludesfile config)
+
+Typical usage
+=============
+
+    Whenever I get lost
+    -------------------
+
+        git <cmd> --help
+
+        http://git-scm.com
+
+        google :-)
+
+    setup new project
+    -----------------
+
+        create XCode project
+
+        cd project_dir
+
+        git init
+        git add .
+        git commit -m 'initial commit'
+
+        ssh server
+        cd git-archive
+        mkdir project_dir.git
+        cd project_dir.git
+        git init --bare
+        exit
+
+        git remote add servername ssh://server/~/Git/project_dir.git
+        git push servername master
+
+        git remote -v
+
+        set up a repo-group in .git/config
+        -----
+        [remotes]
+                group_name = servername1 servername2
+        -----
+
+    clone an existing project
+    -------------------------
+
+        git clone -o servername URL
+        cd project_dir
+        git checkout -b my_stuff
+
+        or just "git checkout tag" if I'm building git, perl etc
+
+    clone a local repo if I want to see what git does
+    -------------------------------------------------
+
+        git clone other_git_dir
+
+    common round-trip
+    -----------------
+
+        git fetch servername                        # git pull == fetch + merge - nasty!
+    OR  git remote update server_group
+
+        git show-branch -a
+            OR git branch -a
+        git show-branch my_branch reference_branch
+
+        git log remote_branch
+        git tag -ln
+
+        git merge [-f] remote/branch
+
+        git status
+        git diff [-w] [filename]
+        git diff [-w] branch
+        gitx
+
+        git checkout -f HEAD                        # roll back changes - no commit
+        git reset --hard                            # throw away index too
+
+        git add -u                                  # catches removed files! (renames & new files must still be specified seperately)
+        git add <file> / <directory>
+        git commit -m 'message'
+        git tag -[a|s] tagname -m 'message'
+
+        git push -f servername                      # if you've done a non-fast-forward commit or re-based your branch
+
+        git push servername --tags                  # pushes all the tags
+
+    less common
+    -----------
+
+        work out where I am:
+
+            git describe    # useful for building release info
+
+        remove a branch locally:
+
+            git branch -[d|D] dead_branch
+
+        remove a branch from a remote repository:
+
+            git push servername :dead_branch
+
+        delete everything that git doesn't know about:
+
+            git clean -dxn
+            git clean -dxf
+
+        grep working directory for something:
+
+            git grep 'blah'
+
+        check history:
+
+            git show commit
+
+        change history:
+
+            git rebase -i base_commit
+
+            git rebase existing_branch_base --onto new_brach_stump      # useful if an old commit needs to be replaced with a new one
+
+        new branch from old_commit:
+
+            git checkout -b new_branch old_commit
+
+        apply individual commits from another branch:
+
+            git cherry
+            git cherry-pick commit
+
+        find out who wrote a line of code:
+
+            git blame file
+
+        find out which commit broke something:
+
+            work out how best to test for the problem
+            git blame   # if location of broken code is known
+
+            write simple test script (ie: check for sig-fault)
+
+            git bisect bad good
+            git bisect run test_script options                          # ie: git bisect run grep -R something .
+
+            git bisect reset
+
+        clean up git repository:
+
+            git gc                                                      # can recover LARGE amounts of disk space
+
+    pathalogical use cases
+    ----------------------
+
+        course exercises
+        create an empty commit first, tag it 'empty'.
+        create a branch for each chapter
+        start each branch from the 'empty' commit
+        create tags for initial setup (equal to each branch head)
+        fill in solutions
+        create tags for solutions
+        reset branch heads to chapter tags
+
+    Working with others
+    -------------------
+
+        each has their own published repo
+        NEVER push to anyone elses repo
+        use "git remote update" to scan all friends repos
