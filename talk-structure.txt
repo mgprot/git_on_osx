@@ -7,6 +7,8 @@ Git with XCode on OS-X
 Introduction:
 =============
 
+    Reference: http://git-scm.com
+
     very quick overview of what git is
         version control
         snap-shot concept
@@ -21,6 +23,15 @@ Introduction:
             - commits
             - tags
             - branches
+        name spaces:
+            - distributed :-)
+            - your namespace has no prefix
+            - each repository has it's own namespace, with the name you supplied
+                - tom/master
+                - tom/new_button
+                - tom/bug_fix
+            - always work locally
+            - merge / apply commits from other people
 
 Get your hands dirty:
 =====================
@@ -30,6 +41,11 @@ Get your hands dirty:
             - browsing changes
             - committing
             but fails for just about everything else
+
+    You code C? Don't be afraid :-)
+
+    XCode notices changes to project directory
+        - let it "revert" to version on disk whenever you checkout a different version
 
 Configuration:
 ==============
@@ -56,6 +72,23 @@ Configuration:
     mac specific:
         - ~/.gitignore  (from excludesfile config)
 
+            .DS_Store
+            *.mode1v3
+            *.pbxuser
+            *.objc_sync
+            version.txt
+            .Spotlight-V100
+            .com.apple.timemachine.supported
+            .fseventsd
+
+        - .gitattributes (in project directory)
+
+            *.pbxproj -crlf -diff -merge
+            *.nib -crlf -diff -merge
+            *.xib -crlf -diff -merge
+
+            required because they look like text, but really can't be merged :-(
+
 Typical usage
 =============
 
@@ -79,8 +112,8 @@ Typical usage
         git add .
         git commit -m 'initial commit'
 
-        ssh server:
-        -----------
+        connect to ssh server:
+        ----------------------
             ssh server
             cd git-archive
             mkdir project_dir.git
@@ -91,8 +124,8 @@ Typical usage
             git remote add servername ssh://server/~/Git/project_dir.git
             git push servername master
 
-        usb stick:
-        ----------
+        usb stick as 'server':
+        ----------------------
             cd /Volumes/usb_stick/git
             mkdir project_dir.git
             cd project_dir.git
@@ -102,13 +135,20 @@ Typical usage
             git remote add usb_stick /Volumes/usb_stick/git/project_dir.git
             git push usb_stick --all
 
-        git remote -v
+        Where am I connected to?
+        ------------------------
 
-        set up a repo-group in .git/config
-        -----
-        [remotes]
-                group_name = servername1 servername2
-        -----
+            git remote -v
+
+
+        Sourcing from multiple repositories:
+        ------------------------------------
+
+            set up a repo-group in .git/config
+            -----
+            [remotes]
+                    group_name = servername1 servername2
+            -----
 
     clone an existing project
     -------------------------
@@ -237,3 +277,9 @@ Typical usage
         each has their own published repo
         NEVER push to anyone elses repo
         use "git remote update" to scan all friends repos
+
+References:
+===========
+
+    http://git-scm.com
+    http://gitready.com
