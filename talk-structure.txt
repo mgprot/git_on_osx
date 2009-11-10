@@ -106,20 +106,24 @@ Typical usage
 
         create XCode project
 
-        cd project_dir
+        localhost > cd project_dir
 
-        git init
-        git add .
-        git commit -m 'initial commit'
+        localhost > git init
+        localhost > git add .
+        localhost > git commit -m 'initial commit'
 
         connect to ssh server:
         ----------------------
-            ssh server
-            cd git-archive
+            localhost > ssh server
+            remotehost > cd git-archive
             mkdir project_dir.git
             cd project_dir.git
             git init --bare
             exit
+
+            git clone --bare project_dir project_dir.git
+            scp -r project_dir.git server:/path/to/git/repositories/
+            rm -rf project_dir.git
 
             git remote add servername ssh://server/~/Git/project_dir.git
             git push servername master
