@@ -230,6 +230,8 @@ Typical usage
 
         change history:
 
+            rebase 'v' merge
+
             git rebase -i base_commit
 
             git rebase existing_branch_base --onto new_brach_stump      # useful if an old commit needs to be replaced with a new one
