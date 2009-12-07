@@ -1,0 +1,3 @@
+[submodule "references/Scott Chacon"]
+	path = references/Scott Chacon
+	url = git://github.com/schacon/git-presentations.git
