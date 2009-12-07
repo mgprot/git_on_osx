@@ -243,6 +243,10 @@ Typical usage
             git cherry
             git cherry-pick commit
 
+        re-apply commits which previously caused conflicts, using the same conflict resolutions
+
+            git rerere
+
         find out who wrote a line of code:
 
             git blame file
@@ -281,6 +285,15 @@ Typical usage
         each has their own published repo
         NEVER push to anyone elses repo
         use "git remote update" to scan all friends repos
+
+        dictator / lieutenents
+
+        setting up a github account
+            github ssh key
+            create repository
+            initial push
+            keeping in sync
+            forking an existing github repo
 
 References:
 ===========
