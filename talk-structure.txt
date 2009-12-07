@@ -236,6 +236,12 @@ Typical usage
 
             git rebase existing_branch_base --onto new_brach_stump      # useful if an old commit needs to be replaced with a new one
 
+            git cherry-pick - add individual commits to a branch
+            git apply - add a patch to the current branch
+            git rebase --onto - apply a whole chain of commits (ie: possibly leaving the first few out)
+            git rebase --interactive - interactively squash multiple commits into a single commit, drop or reorder commits
+
+
         new branch from old_commit:
 
             git checkout -b new_branch old_commit
