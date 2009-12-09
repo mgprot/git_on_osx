@@ -266,10 +266,23 @@ Typical usage
 
             write simple test script (ie: check for sig-fault)
 
-            git bisect bad good
+            git bisect <bad> <good...>
+            git bisect good
+            git bisect bad
+            git bisect skip
             git bisect run test_script options                          # ie: git bisect run grep -R something .
+                                                                        # note: exit 0 == good, 1..124 == bad, 125 == skip,
+            git bisect visualize
+            git bisect log                                              # ???
+            git bisect replay                                           # ???
 
-            git bisect reset
+            git bisect reset                                            # remove bisect branch and return to point before bisecting began
+
+            http://www.kernel.org/pub/software/scm/git/docs/git-bisect-lk2009.html
+            http://lwn.net/Articles/317154/
+            http://www-cs-students.stanford.edu/~blynn/gitmagic/book.html
+            http://mirror.yandex.ru/pub/software/scm/git/docs/gitworkflows.html
+            http://article.gmane.org/gmane.comp.version-control.git/45195/
 
         clean up git repository:
 
